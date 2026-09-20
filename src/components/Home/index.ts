@@ -1,0 +1,11 @@
+export { default as HeroSection } from './HeroSection';
+export { default as AboutSection } from './AboutSection';
+export { default as ServicesSection } from './ServicesSection';
+export { default as InstructorsSection } from './InstructorsSection';
+export { default as WhyChooseUs } from './WhyChooseUs';
+export { default as TestimonialsSection } from './TestimonialsSection';
+export { default as WellnessToolsSection } from './WellnessToolsSection';
+export { default as SuryaNamaskarSection } from './SuryaNamaskarSection';
+export { default as MeditationSection } from './MeditationSection';
+export { default as BlogSection } from './BlogSection';
+export { default as ContactSection } from './ContactSection';

@@ -1,0 +1,486 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Forest — the brand's grounding colour, from canopy light to deep shade. */
+  --forest: #143024;
+  --forest-deep: #081b11;
+  --forest-black: #040806;
+
+  /* Gold — 500 on light surfaces, 400 on dark ones where it needs more lift. */
+  --gold: #be9227;
+  --gold-light: #d4af37;
+  --gold-deep: #8a6a1c;
+
+  /* Surfaces: cream is the page base, white the raised card. */
+  --cream: #f8faf9;
+  --surface: rgba(255, 255, 255, 0.82);
+  --surface-strong: rgba(8, 27, 17, 0.75);
+
+  --text-primary: #143024;
+  --text-muted: rgba(20, 48, 36, 0.7);
+  --border: rgba(20, 48, 36, 0.1);
+
+  /* Section rhythm: one source of truth for vertical spacing between bands. */
+  --section-y: clamp(5rem, 10vw, 9rem);
+  /* The site's easing curve — the same one the header and buttons already use. */
+  --ease-brand: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Lenis drives smooth scrolling in JS; native smooth-scroll would fight it.
+   It stays as the fallback whenever Lenis is not running (reduced motion, no JS). */
+html:not(.lenis) {
+  scroll-behavior: smooth;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: clip;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+body {
+  font-family: 'Outfit', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Flat cream. Every section paints its own background, so this only ever shows
+     through at the edges — a gradient here just tints the seams. */
+  background: var(--cream);
+  color: var(--text-primary);
+}
+
+input,
+textarea,
+select {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  padding: 1rem 1.1rem;
+  color: var(--text-primary);
+  box-shadow: 0 24px 64px rgba(20, 48, 36, 0.06);
+}
+
+input:focus,
+textarea:focus,
+select:focus,
+button:focus,
+a:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(190, 146, 39, 0.28);
+}
+
+/* Animating `all` forces the browser to watch layout properties too, which
+   causes reflow-driven stutter. Only composited/cheap properties here. */
+button,
+a {
+  transition:
+    color 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 40px 120px rgba(20, 48, 36, 0.08);
+}
+
+.premium-panel {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(248, 250, 249, 0.85));
+  border: 1px solid var(--border);
+  box-shadow: 0 32px 120px rgba(20, 48, 36, 0.05);
+}
+
+.hero-glow {
+  box-shadow: 0 0 120px rgba(190, 146, 39, 0.14);
+}
+
+/* ── Brand system: shared across Header, Footer, Hero, and every new page ── */
+
+.font-luxury-serif {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.font-modern-sans {
+  font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+}
+
+.gold-shimmer-text {
+  background: linear-gradient(135deg, #fef08a 0%, #d4af37 40%, #854d0e 80%, #fef08a 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 8s ease-in-out infinite;
+}
+
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}
+
+.divine-glass {
+  background: rgba(10, 18, 14, 0.4);
+  backdrop-filter: blur(24px) saturate(140%);
+  -webkit-backdrop-filter: blur(24px) saturate(140%);
+  border: 1px solid rgba(212, 175, 55, 0.15);
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.5),
+    inset 0 0 15px rgba(212, 175, 55, 0.05);
+}
+
+.divine-glass-hover:hover {
+  background: rgba(15, 28, 22, 0.6);
+  border-color: rgba(212, 175, 55, 0.4);
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.6),
+    0 0 30px rgba(212, 175, 55, 0.15);
+}
+
+.divine-pill {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.divine-btn-primary {
+  background: linear-gradient(135deg, #fef08a 0%, #d4af37 50%, #b8860b 100%);
+  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.25);
+}
+
+.divine-btn-primary:hover {
+  box-shadow: 0 14px 40px rgba(212, 175, 55, 0.4);
+  transform: translate3d(0, -2px, 0);
+}
+
+.divine-btn-primary:disabled {
+  opacity: 0.5;
+  box-shadow: none;
+  transform: none;
+  cursor: not-allowed;
+}
+
+.divine-btn-secondary {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(226, 232, 240, 0.25);
+  backdrop-filter: blur(12px);
+}
+
+.divine-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(212, 175, 55, 0.5);
+  transform: translate3d(0, -2px, 0);
+}
+
+/* Light-surface variant of the primary/secondary buttons, for use on white/cream sections */
+.brand-btn-primary {
+  background: linear-gradient(135deg, #d4af37 0%, #be9227 50%, #8a6a1c 100%);
+  color: #fff;
+  box-shadow: 0 10px 30px rgba(190, 146, 39, 0.25);
+}
+
+.brand-btn-primary:hover {
+  box-shadow: 0 14px 40px rgba(190, 146, 39, 0.35);
+  transform: translate3d(0, -2px, 0);
+}
+
+.brand-btn-primary:disabled {
+  opacity: 0.5;
+  box-shadow: none;
+  transform: none;
+  cursor: not-allowed;
+}
+
+.brand-btn-secondary {
+  background: rgba(20, 48, 36, 0.04);
+  border: 1px solid rgba(20, 48, 36, 0.18);
+  color: #143024;
+}
+
+.brand-btn-secondary:hover {
+  background: rgba(20, 48, 36, 0.08);
+  border-color: rgba(190, 146, 39, 0.55);
+  transform: translate3d(0, -2px, 0);
+}
+
+.brand-btn-ghost {
+  background: transparent;
+  border: 1px solid rgba(190, 146, 39, 0.5);
+  color: #be9227;
+}
+
+.brand-btn-ghost:hover {
+  background: rgba(190, 146, 39, 0.08);
+  transform: translate3d(0, -2px, 0);
+}
+
+@keyframes divinePulse {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.15) rotate(5deg);
+  }
+}
+
+.divine-aura {
+  animation: divinePulse 12s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+.liquid-glass {
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow:
+    0 8px 32px rgba(20, 48, 36, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    inset 0 -1px 0 rgba(20, 48, 36, 0.04);
+}
+
+.liquid-glass-pill {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(190, 146, 39, 0.35);
+  box-shadow:
+    0 4px 16px rgba(190, 146, 39, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95),
+    inset 0 -1px 0 rgba(190, 146, 39, 0.08);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *:not(.animate-spin),
+  *:not(.animate-spin)::before,
+  *:not(.animate-spin)::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  /* Decorative, purely ambient motion — safe to stop outright.
+     Loading spinners are deliberately left running: they report status. */
+  .divine-aura,
+  .gold-shimmer-text,
+  .animate-ping,
+  .animate-pulse {
+    animation: none !important;
+  }
+}
+
+/* For swipeable strips: keep native scrolling, hide the bar (it would clash with the 10px global one) */
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(20, 48, 36, 0.05);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(20, 48, 36, 0.28);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(20, 48, 36, 0.45);
+}
+
+/* Selection */
+::selection {
+  background-color: var(--gold);
+  color: white;
+}
+
+/* Global Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.slide-up {
+  animation: slideUp 0.5s ease-out;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   DISPLAY TYPOGRAPHY
+   The hero speaks in Cormorant Garamond; these let the sections below answer
+   in the same voice. Outfit stays the UI/body face — serif is for display
+   sizes only, where its high stroke contrast reads as craft rather than noise.
+   ══════════════════════════════════════════════════════════════════════════ */
+
+.display-xl,
+.display-lg,
+.display-md {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  line-height: 1.02;
+  /* Keeps a two-line heading from dropping a single orphaned word. */
+  text-wrap: balance;
+}
+
+.display-xl {
+  font-size: clamp(3rem, 9vw, 7rem);
+}
+
+.display-lg {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+}
+
+.display-md {
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+/* The accent phrase inside a display heading — italic gold, the brand's signature. */
+.display-accent {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--gold);
+}
+
+.on-dark .display-accent,
+.display-accent-light {
+  color: var(--gold-light);
+}
+
+/* Small caps eyebrow above a heading. */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.eyebrow::before {
+  content: '';
+  width: 2rem;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.6;
+}
+
+/* Centred variant grows a matching rule on the right, so the label sits balanced. */
+.eyebrow-center::after {
+  content: '';
+  width: 2rem;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.6;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   SECTION RHYTHM
+   Consistent vertical measure, and seams that let a dark band resolve into a
+   light one instead of butting against it with a hard line.
+   ══════════════════════════════════════════════════════════════════════════ */
+
+.section-y {
+  padding-top: var(--section-y);
+  padding-bottom: var(--section-y);
+}
+
+/* A hairline of gold that fades out at both ends — used to close a section. */
+.gold-rule {
+  height: 1px;
+  border: 0;
+  background: linear-gradient(90deg, transparent, rgba(190, 146, 39, 0.45), transparent);
+}
+
+/* Lifts a card on hover without animating layout properties. */
+.lift {
+  transition:
+    transform 0.45s var(--ease-brand),
+    box-shadow 0.45s var(--ease-brand),
+    border-color 0.3s ease;
+}
+
+.lift:hover {
+  transform: translate3d(0, -8px, 0);
+  box-shadow: 0 28px 56px -16px rgba(20, 48, 36, 0.16);
+}
+
+/* ── Reading progress bar, fixed under the header ── */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  z-index: 60;
+  width: 100%;
+  transform-origin: 0 50%;
+  background: linear-gradient(90deg, var(--gold-deep), var(--gold-light), var(--gold));
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lift:hover {
+    transform: none;
+  }
+}
