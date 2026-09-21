@@ -13,10 +13,78 @@ interface Program {
   focusArea: string;
   slug: string;
   badge?: string;
+  price?: number | null;
   isFeatured?: boolean;
+  priceLabel?: string;
 }
 
 const programs: Program[] = [
+  {
+    title: 'Initial Consultation',
+    subtitle: 'Personalized Yoga & Wellness Assessment',
+    description:
+      'An initial consultation to understand your goals, lifestyle, mobility, and wellness needs before creating a personalized practice plan.',
+    format: 'Online & In-Person',
+    frequency: 'One-Time Session',
+    focusArea: 'Assessment & Wellness Planning',
+    price: 499,
+    slug: '/booking?type=Initial%20Consultation',
+  },
+  {
+    title: 'Online Group Wellness',
+    subtitle: 'Guided Wellness Sessions from Anywhere',
+    description:
+      'Interactive online group yoga and wellness sessions designed to build consistency, improve flexibility, reduce stress, and support overall wellbeing.',
+    format: 'Live Online Group',
+    frequency: 'Scheduled Sessions',
+    focusArea: 'Wellness & Community',
+    price: 2999,
+    slug: '/booking?type=Online%20Group%20Wellness',
+  },
+  {
+    title: 'Yoga at Home',
+    subtitle: 'Guided Home Yoga Practice',
+    description:
+      'A convenient yoga experience designed for practicing from the comfort of your home with structured guidance and personalized routines.',
+    format: 'Home Practice',
+    frequency: 'Flexible Scheduling',
+    focusArea: 'Routine & Flexibility',
+    price: 999,
+    slug: '/booking?type=Yoga%20at%20Home',
+  },
+  {
+    title: 'Online 1-on-1',
+    subtitle: 'Private Personalized Yoga Coaching',
+    description:
+      'One-on-one online yoga sessions tailored to your individual goals, mobility, fitness level, and wellness requirements.',
+    format: 'Live HD Video Call',
+    frequency: 'Flexible Scheduling',
+    focusArea: 'Personalized Coaching',
+    price: 549,
+    slug: '/booking?type=Online%201-on-1',
+  },
+  {
+    title: 'Couples Yoga',
+    subtitle: 'Wellness Through Shared Practice',
+    description:
+      'A shared yoga experience for couples focused on movement, relaxation, mindfulness, connection, and building healthy habits together.',
+    format: 'Private Session',
+    frequency: 'Scheduled Sessions',
+    focusArea: 'Connection & Balance',
+    price: 1499,
+    slug: '/booking?type=Couples%20Yoga',
+  },
+  {
+    title: 'Family Yoga',
+    subtitle: 'Wellness for the Whole Family',
+    description:
+      'Family-friendly yoga sessions designed to bring everyone together through movement, mindfulness, relaxation, and healthy routines.',
+    format: 'Private Family Session',
+    frequency: 'Scheduled Sessions',
+    focusArea: 'Family Wellness',
+    price: 1999,
+    slug: '/booking?type=Family%20Yoga',
+  },
   {
     title: 'Therapy Yoga',
     subtitle: 'Clinical Pain Relief & Injury Rehabilitation',
@@ -25,49 +93,22 @@ const programs: Program[] = [
     format: 'In-Person & Online',
     frequency: '2-3 Sessions / Wk',
     focusArea: 'Rehabilitation & Posture',
+    price: 999,
     slug: '/booking?type=Therapy%20Yoga',
     badge: 'Most Requested',
     isFeatured: true,
   },
   {
-    title: 'Yoga at Home',
-    subtitle: 'Guided Home Practice System',
+    title: 'Corporate',
+    subtitle: 'Workplace Wellness Programs',
     description:
-      'Structured self-guided routines complete with high-definition video walkthroughs, personalized scheduling, and continuous mentor accountability.',
-    format: 'Self-Paced Portal',
-    frequency: 'Daily Practice Plan',
-    focusArea: 'Habit Building & Routine',
-    slug: '/booking?type=Yoga%20at%20Home',
-  },
-  {
-    title: 'Online 1-on-1 Classes',
-    subtitle: 'Private Live Alignment Coaching',
-    description:
-      'Direct interactive sessions with senior master instructors tailored precisely to your unique mobility range, breath capacity, and goals.',
-    format: 'Live HD Video Call',
-    frequency: 'Flexible Scheduling',
-    focusArea: 'Alignment & Precision',
-    slug: '/booking?type=Online%201-on-1',
-  },
-  {
-    title: 'Family & Couples Yoga',
-    subtitle: 'Shared Mindful Connection',
-    description:
-      'Guided joint practices designed to reduce household stress, foster deeper emotional connection, and instill healthy habits together.',
-    format: 'Private Group',
-    frequency: 'Weekly Sessions',
-    focusArea: 'Emotional Bond & Balance',
-    slug: '/booking?type=Family%20Yoga',
-  },
-  {
-    title: 'Corporate Wellness',
-    subtitle: 'Executive & Team Resilience Programs',
-    description:
-      'Tailored workplace stress management workshops, desk-stretching modules, and leadership burnout recovery retreats.',
-    format: 'On-Site or Hybrid',
-    frequency: 'Custom Retainer',
-    focusArea: 'Performance & Stress Control',
-    slug: '/booking?type=Corporate%20Wellness',
+      'Customized yoga and wellness programs for organizations, teams, and workplaces focused on stress management, employee wellbeing, and healthier work routines.',
+    format: 'On-Site or Online',
+    frequency: 'Custom Program',
+    focusArea: 'Corporate Wellness',
+    price: null,
+    priceLabel: 'Request a Quote',
+    slug: '/booking?type=Corporate',
     badge: 'Enterprise',
   },
 ];
@@ -75,7 +116,9 @@ const programs: Program[] = [
 const ServicesPage = () => {
   return (
     <>
-      <style dangerouslySetInnerHTML={{ __html: `
+      <style
+        dangerouslySetInnerHTML={{
+          __html: `
         .service-card {
           transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
         }
@@ -94,7 +137,9 @@ const ServicesPage = () => {
           transform: translateX(4px);
           color: #be9227;
         }
-      ` }} />
+      `,
+        }}
+      />
 
       <main
         className="min-h-screen bg-[#f8faf9] text-[#143024]"
@@ -171,8 +216,7 @@ const ServicesPage = () => {
                       </div>
 
                       <div className="px-3.5 py-1.5 rounded-xl bg-[#143024]/5 border border-[#143024]/10 text-xs font-medium text-[#143024]">
-                        <span className="text-[#143024]/40 mr-1.5">Pacing:</span>{' '}
-                        {program.frequency}
+                        <span className="text-[#143024]/40 mr-1.5">Pricing:</span> {program.price}
                       </div>
 
                       <div className="px-3.5 py-1.5 rounded-xl bg-[#143024]/5 border border-[#143024]/10 text-xs font-medium text-[#143024]">

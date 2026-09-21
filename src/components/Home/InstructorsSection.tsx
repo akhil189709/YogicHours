@@ -28,15 +28,6 @@ const instructors: Instructor[] = [
     bio: 'Blends traditional yogic practice with a practical, personalized approach to modern health — having guided 500+ individuals through programs built around their own goals.',
   },
   {
-    name: 'Pragya Devi',
-    title: 'Yoga Teacher & Therapist',
-    experience: '7+ Years',
-    image: '/pragya3.jpeg',
-    imagePosition: '50% 30%',
-    specialties: ['Hatha Yoga', 'Ashtanga Yoga', 'Pranayama', 'Therapeutic Yoga'],
-    bio: 'Creates personalized yoga programs for physical fitness, stress management, flexibility, and support for lifestyle-related disorders.',
-  },
-  {
     name: 'Shiya Shahi',
     title: 'International Yoga Teacher & Wellness Coach',
     experience: '6+ Years',
@@ -45,12 +36,23 @@ const instructors: Instructor[] = [
     specialties: ['Aerial Yoga', 'Therapeutic Yoga', 'Flexibility Training', 'Holistic Wellness'],
     bio: 'Brings international experience from Dubai, designing mindful practices that support strength, recovery, relaxation, and overall well-being.',
   },
+  {
+    name: 'Pragya Devi',
+    title: 'Yoga Teacher & Therapist',
+    experience: '7+ Years',
+    image: '/pragya3.jpeg',
+    imagePosition: '50% 30%',
+    specialties: ['Hatha Yoga', 'Ashtanga Yoga', 'Pranayama', 'Therapeutic Yoga'],
+    bio: 'Creates personalized yoga programs for physical fitness, stress management, flexibility, and support for lifestyle-related disorders.',
+  },
 ];
 
 const InstructorsSection = () => {
   return (
     <>
-      <style dangerouslySetInnerHTML={{ __html: `
+      <style
+        dangerouslySetInnerHTML={{
+          __html: `
         .instructor-card:hover .instructor-img { transform: scale(1.06); }
 
         .instructor-card:hover .book-btn {
@@ -58,7 +60,9 @@ const InstructorsSection = () => {
           border-color: #be9227;
           color: #ffffff;
         }
-      ` }} />
+      `,
+        }}
+      />
 
       <section
         className="section-y px-6 md:px-12 relative overflow-hidden bg-[#f8faf9]"
@@ -142,7 +146,12 @@ const InstructorsSection = () => {
                   <Link href="/booking" className="mt-auto pt-7">
                     <span className="book-btn w-full py-3.5 rounded-2xl bg-[#143024]/5 border border-[#143024]/10 text-[#143024] font-bold text-xs uppercase tracking-wider transition-all duration-300 flex items-center justify-center gap-2">
                       Book Session
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg
+                        className="w-4 h-4"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
                         <path
                           strokeLinecap="round"
                           strokeLinejoin="round"

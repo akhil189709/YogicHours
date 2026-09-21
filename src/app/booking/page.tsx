@@ -33,7 +33,7 @@ const bookingOptions: BookingOption[] = [
     duration: '45 Mins',
     badge: 'Recommended Start',
     priceTag: '1-on-1 Clinical Assessment',
-    price: 1499,
+    price: 499,
   },
   {
     title: 'Online Group Wellness',
@@ -41,7 +41,7 @@ const bookingOptions: BookingOption[] = [
     duration: '60 Mins',
     badge: 'Community',
     priceTag: 'Group Session',
-    price: 999,
+    price: 499,
   },
   {
     title: 'Yoga at Home',
@@ -49,7 +49,7 @@ const bookingOptions: BookingOption[] = [
     duration: '60 Mins',
     badge: 'At-Home',
     priceTag: 'Home Visit',
-    price: 1999,
+    price: 999,
   },
   {
     title: 'Online 1-on-1',
@@ -58,7 +58,7 @@ const bookingOptions: BookingOption[] = [
     duration: '60 Mins',
     badge: 'Personalized',
     priceTag: 'Customized Routine',
-    price: 2499,
+    price: 599,
   },
   {
     title: 'Couples Yoga',
@@ -66,7 +66,7 @@ const bookingOptions: BookingOption[] = [
     duration: '60 Mins',
     badge: 'Duo Practice',
     priceTag: 'Shared Wellness',
-    price: 2999,
+    price: 1499,
   },
   {
     title: 'Family Yoga',
@@ -75,7 +75,7 @@ const bookingOptions: BookingOption[] = [
     duration: '75 Mins',
     badge: 'Group Practice',
     priceTag: 'Whole-Family Session',
-    price: 3499,
+    price: 1999,
   },
   {
     title: 'Therapy Yoga',
@@ -84,7 +84,7 @@ const bookingOptions: BookingOption[] = [
     duration: 'Multi-Session',
     badge: 'Clinical Care',
     priceTag: 'Holistic Recovery',
-    price: 4999,
+    price: 999,
   },
   {
     title: 'Corporate Wellness',
@@ -182,7 +182,9 @@ const BookingPageInner = () => {
 
   return (
     <>
-      <style dangerouslySetInnerHTML={{ __html: `
+      <style
+        dangerouslySetInnerHTML={{
+          __html: `
         .booking-card {
           transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
@@ -197,7 +199,9 @@ const BookingPageInner = () => {
           border-color: #be9227;
           background-color: rgba(190, 146, 39, 0.03);
         }
-      ` }} />
+      `,
+        }}
+      />
 
       <main
         className="min-h-screen bg-[#f8faf9] text-[#143024]"

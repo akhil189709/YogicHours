@@ -41,7 +41,10 @@ const ContactPage = () => {
   };
 
   return (
-    <main className="min-h-screen bg-[#f8faf9] text-[#143024]" style={{ fontFamily: "'Outfit', sans-serif" }}>
+    <main
+      className="min-h-screen bg-[#f8faf9] text-[#143024]"
+      style={{ fontFamily: "'Outfit', sans-serif" }}
+    >
       <Header />
 
       {/* ── HERO BANNER ── */}

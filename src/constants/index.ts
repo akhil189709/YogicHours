@@ -28,19 +28,20 @@ export const SERVICE_CATEGORY_LABELS: Record<string, string> = {
 
 // Social Media Links
 export const SOCIAL_MEDIA = {
-    INSTAGRAM: { handle: '@yogichours', url: 'https://instagram.com/yogichours' },
-    FACEBOOK: { handle: 'Yogic Hours', url: 'https://facebook.com/yogichours' },
-    YOUTUBE: { handle: 'Yogic Hours', url: 'https://youtube.com/@yogichours' },
-    LINKEDIN: { handle: 'Yogic Hours', url: 'https://linkedin.com/company/yogichours' },
+    INSTAGRAM: { handle: '@yogichours', url: 'https://www.instagram.com/yogichours' },
+    FACEBOOK: { handle: 'Yogic Hours', url: 'https://www.facebook.com/share/1Emi4nQndN/' },
+    YOUTUBE: { handle: '@yogichours26', url: 'https://youtube.com/@yogichours26' },
+    LINKEDIN: { handle: 'Yogic Hours', url: 'https://www.linkedin.com/in/yogic-hours-01aa53409' },
 };
 
 // The single number the whole site uses: bookings, WhatsApp and general enquiries all go here.
 // Change it in this one place — everything below is derived from it.
-const PRIMARY_PHONE = { display: '+91 95577 29533', digits: '919557729533' };
+// const PRIMARY_PHONE = { display: '+91 95577 29533', digits: '919557729533' };
+const PRIMARY_PHONE = { display: '+91 9606152910', digits: '919606152910' }
 
 // Contact Information
 export const CONTACT_INFO = {
-    EMAIL: 'contact@yogichours.com',
+    EMAIL: ' yogichours@gmail.com',
     PHONE: PRIMARY_PHONE.display,
     PHONE_LINK: `tel:+${PRIMARY_PHONE.digits}`,
     WHATSAPP: PRIMARY_PHONE.display,

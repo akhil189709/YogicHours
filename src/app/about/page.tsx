@@ -67,41 +67,6 @@ const FOUNDER_EXPERTISE = [
 
 const TEAM: TeamMember[] = [
   {
-    name: 'Pragya Devi',
-    role: 'Yoga Teacher & Therapist',
-    experience: '7+ Years',
-    photos: [
-      {
-        src: '/pragya1.jpeg',
-        alt: 'Pragya Devi in a seated yoga pose on a blue mat',
-        position: '50% 30%',
-        zoom: 1.3,
-      },
-      {
-        src: '/pragya2.jpeg',
-        alt: 'Pragya Devi in a low lunge with her arms raised',
-        position: '50% 30%',
-        zoom: 1.1,
-      },
-      {
-        src: '/pragya3.jpeg',
-        alt: 'Pragya Devi in a front split with her arms raised',
-        position: '50% 30%',
-      },
-    ],
-    bio: [
-      'Pragya Devi is a passionate and experienced Yoga Teacher & Therapist with over 7 years of expertise in helping individuals achieve better health, balance, and well-being through the timeless practice of yoga.',
-      'She focuses on creating personalized yoga programs that address individual health goals. Whether the aim is physical fitness, stress management, improved flexibility, or support for lifestyle-related disorders, she provides a holistic and compassionate approach to wellness.',
-    ],
-    credentials: [
-      "Bachelor's Degree in Yoga",
-      'P.G. Diploma in Yoga — Dev Sanskriti Vishwavidyalaya',
-    ],
-    expertise: ['Hatha Yoga', 'Ashtanga Yoga', 'Pranayama', 'Meditation', 'Therapeutic Yoga'],
-    belief:
-      'For Pragya, yoga is more than a profession — it is a way of life dedicated to inspiring healthier, happier, and more mindful living.',
-  },
-  {
     name: 'Shiya Shahi',
     role: 'International Yoga Teacher & Wellness Coach',
     experience: '6+ Years',
@@ -150,6 +115,42 @@ const TEAM: TeamMember[] = [
     ],
     belief:
       'With a strong foundation in yogic science and international exposure, Shiya is passionate about making yoga an engaging, effective, and transformative part of modern life.',
+  },
+
+  {
+    name: 'Pragya Devi',
+    role: 'Yoga Teacher & Therapist',
+    experience: '7+ Years',
+    photos: [
+      {
+        src: '/pragya1.jpeg',
+        alt: 'Pragya Devi in a seated yoga pose on a blue mat',
+        position: '50% 30%',
+        zoom: 1.3,
+      },
+      {
+        src: '/pragya2.jpeg',
+        alt: 'Pragya Devi in a low lunge with her arms raised',
+        position: '50% 30%',
+        zoom: 1.1,
+      },
+      {
+        src: '/pragya3.jpeg',
+        alt: 'Pragya Devi in a front split with her arms raised',
+        position: '50% 30%',
+      },
+    ],
+    bio: [
+      'Pragya Devi is a passionate and experienced Yoga Teacher & Therapist with over 7 years of expertise in helping individuals achieve better health, balance, and well-being through the timeless practice of yoga.',
+      'She focuses on creating personalized yoga programs that address individual health goals. Whether the aim is physical fitness, stress management, improved flexibility, or support for lifestyle-related disorders, she provides a holistic and compassionate approach to wellness.',
+    ],
+    credentials: [
+      "Bachelor's Degree in Yoga",
+      'P.G. Diploma in Yoga — Dev Sanskriti Vishwavidyalaya',
+    ],
+    expertise: ['Hatha Yoga', 'Ashtanga Yoga', 'Pranayama', 'Meditation', 'Therapeutic Yoga'],
+    belief:
+      'For Pragya, yoga is more than a profession — it is a way of life dedicated to inspiring healthier, happier, and more mindful living.',
   },
 ];
 
