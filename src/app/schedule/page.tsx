@@ -89,7 +89,7 @@ const sessions = [
     description:
       'Gentle yet effective practice to wake up your body, boost energy and set a positive tone for the day.',
     points: ['Gentle Asanas', 'Breathwork', 'Mobility & Stretching', 'Relaxation'],
-    image: '/schedule/refresh-energize.jpg',
+    image: '/one.jpg',
     Icon: SunIcon,
     bg: '#fbf1dd',
     iconBg: '#f8e3b0',
@@ -100,7 +100,7 @@ const sessions = [
     title: 'Power Flow',
     description: 'High intensity practice to build strength, improve stamina and increase focus.',
     points: ['Dynamic Asanas', 'Core & Strength', 'Breath Control', 'Cool Down'],
-    image: '/schedule/power-flow.jpg',
+    image: '/two.jpg',
     Icon: BoltIcon,
     bg: '#fdebe0',
     iconBg: '#f9c9a6',
@@ -111,7 +111,7 @@ const sessions = [
     title: 'Strong & Steady',
     description: 'A high intensity class to improve flexibility, endurance and overall fitness.',
     points: ['Power Yoga', 'Core Strength', 'Balance & Stability', 'Relaxation'],
-    image: '/schedule/strong-steady.jpg',
+    image: '/three.jpg',
     Icon: LotusIcon,
     bg: '#efebf6',
     iconBg: '#ddd3ee',
@@ -123,7 +123,7 @@ const sessions = [
     description:
       'A perfect blend of yoga, face yoga and breathing practices for inner balance, healthy skin and overall wellness.',
     points: ['Yoga Asanas', 'Face Yoga', 'Breathing Techniques', 'Relaxation'],
-    image: '/schedule/yoga-face-breath.jpg',
+    image: '/four.jpg',
     Icon: FaceIcon,
     bg: '#fbe8e8',
     iconBg: '#f6c8cf',
@@ -134,7 +134,7 @@ const sessions = [
     title: 'Ladies Special',
     description: 'A dedicated batch for women to stay fit, healthy and confident.',
     points: ['Gentle Yoga', 'Strength & Toning', 'Hormonal Balance', 'Relaxation'],
-    image: '/schedule/ladies-special.jpg',
+    image: '/five.jpg',
     Icon: GroupIcon,
     bg: '#f8e6ec',
     iconBg: '#ecc6d8',
@@ -146,7 +146,7 @@ const sessions = [
     description:
       'Simple, effective practices to release stress, improve posture and bring balance after a busy workday.',
     points: ['Stretching & Mobility', 'Breathwork', 'Stress Relief', 'Guided Relaxation'],
-    image: '/schedule/corporate-wellness.jpg',
+    image: '/six.jpg',
     Icon: BriefcaseIcon,
     bg: '#e6eff5',
     iconBg: '#bfe0e8',
@@ -157,7 +157,7 @@ const sessions = [
     title: 'Face Yoga & Relaxation',
     description: 'Nourish your face, calm your mind and prepare for deep, restful sleep.',
     points: ['Face Yoga', 'Massage Techniques', 'Breathing', 'Yoga Nidra'],
-    image: '/schedule/face-yoga-relaxation.jpg',
+    image: '/seven.jpg',
     Icon: MoonIcon,
     bg: '#e4ebf5',
     iconBg: '#c7d6ea',
@@ -210,7 +210,7 @@ const SchedulePage = () => {
 
           <div className="relative -mx-6 h-64 sm:-mx-10 lg:mx-0 lg:h-[340px] lg:[mask-image:linear-gradient(to_right,transparent,black_30%)]">
             <Image
-              src="/schedule/hero.jpg"
+              src="/hero2.jpg"
               alt=""
               fill
               priority
