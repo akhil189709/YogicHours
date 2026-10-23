@@ -186,7 +186,7 @@ const Footer = () => {
 
         <div className="mt-16 flex flex-col items-center gap-4 border-t border-white/10 pt-8 text-center text-sm text-white/50 sm:flex-row sm:justify-between sm:text-left">
           <p>&copy; {new Date().getFullYear()} Yogic Hours. All rights reserved.</p>
-          <p>yogichours.com</p>
+          <p>yogichours.in</p>
         </div>
       </div>
 
