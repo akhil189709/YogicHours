@@ -53,7 +53,7 @@
    SMTP_PORT=587
    SMTP_USER=your-email@gmail.com
    SMTP_PASSWORD=your-app-password
-   SMTP_FROM_EMAIL=noreply@yogichours.com
+   SMTP_FROM_EMAIL=noreply@yogichours.in
 
    # Twilio (for SMS/WhatsApp)
    TWILIO_ACCOUNT_SID=your_account_sid

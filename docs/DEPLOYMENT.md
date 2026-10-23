@@ -291,7 +291,7 @@ SMTP_HOST=smtp.sendgrid.net
 SMTP_PORT=587
 SMTP_USER=apikey
 SMTP_PASSWORD=your_sendgrid_key
-SMTP_FROM_EMAIL=noreply@yogichours.com
+SMTP_FROM_EMAIL=noreply@yogichours.in
 
 # Twilio
 TWILIO_ACCOUNT_SID=your_account_sid

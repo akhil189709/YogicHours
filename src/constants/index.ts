@@ -26,6 +26,15 @@ export const SERVICE_CATEGORY_LABELS: Record<string, string> = {
     corporate_wellness: 'Corporate Wellness Programs',
 };
 
+// Canonical origin for the public site. Every absolute URL the crawler sees
+// (metadata, sitemap, robots) is built from this one value.
+// Override per environment with NEXT_PUBLIC_SITE_URL; a trailing slash is stripped
+// so callers can always write `${SITE_URL}/path`.
+export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || 'https://yogichours.com').replace(
+    /\/+$/,
+    '',
+);
+
 // Social Media Links
 export const SOCIAL_MEDIA = {
     INSTAGRAM: { handle: '@yogichours', url: 'https://www.instagram.com/yogichours' },
@@ -46,7 +55,7 @@ export const CONTACT_INFO = {
     PHONE_LINK: `tel:+${PRIMARY_PHONE.digits}`,
     WHATSAPP: PRIMARY_PHONE.display,
     WHATSAPP_LINK: `https://wa.me/${PRIMARY_PHONE.digits}`,
-    WEBSITE: 'https://yogichours.com',
+    WEBSITE: SITE_URL,
 };
 
 // Meditation Types & Soundscapes

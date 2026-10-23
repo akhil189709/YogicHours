@@ -486,9 +486,9 @@ This project is proprietary and confidential.
 
 **Yogic Hours** - Heal In Every Hour
 
-- Website: https://yogichours.com
+- Website: https://yogichours.in
 - Instagram: @yogichours
-- Email: contact@yogichours.com
+- Email: contact@yogichours.in
 
 ---
 
@@ -505,8 +505,8 @@ This project is proprietary and confidential.
 For issues, questions, or suggestions:
 
 - Open an issue on GitHub
-- Email: contact@yogichours.com
-- Visit: https://yogichours.com
+- Email: contact@yogichours.in
+- Visit: https://yogichours.in
 
 ---
 
