@@ -44,13 +44,17 @@ const SmoothScroll = ({ children }: { children: ReactNode }) => {
       ref={lenisRef}
       options={{
         autoRaf: false,
-        duration: 1.05,
-        easing: (t: number) => 1 - Math.pow(1 - t, 3),
+        // Lerp follows the wheel continuously instead of restarting a fixed-length
+        // animation on every tick, so the page keeps up with fast scrolling.
+        // Higher = snappier (1 is instant); 0.1 is Lenis' floaty default.
+        lerp: 0.18,
+        wheelMultiplier: 1.25,
         // With smoothing off, Lenis stops intercepting the wheel and native
         // scrolling passes straight through, while scrollTo() still works.
         smoothWheel: !reduceMotion,
-        syncTouch: !reduceMotion,
-        touchMultiplier: 1.6,
+        // Touch devices keep native momentum scrolling, which is faster and more
+        // responsive than Lenis' simulated touch inertia.
+        syncTouch: false,
         anchors: { offset: HEADER_OFFSET },
       }}
     >
