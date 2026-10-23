@@ -30,7 +30,7 @@ export const SERVICE_CATEGORY_LABELS: Record<string, string> = {
 // (metadata, sitemap, robots) is built from this one value.
 // Override per environment with NEXT_PUBLIC_SITE_URL; a trailing slash is stripped
 // so callers can always write `${SITE_URL}/path`.
-export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || 'https://yogichours.com').replace(
+export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || 'https://yogichours.in').replace(
     /\/+$/,
     '',
 );
