@@ -11,7 +11,7 @@
  *       Who has access:  Anyone
  *     Copy the Web app URL (it ends in /exec).
  *  4. Put that URL in the website's .env.local:
- *       NEXT_GOOGLE_SHEETS_URL=https://script.google.com/macros/s/.../exec
+ *       NEXT_PUBLIC_GOOGLE_SHEETS_URL=https://script.google.com/macros/s/.../exec
  *     Then restart the dev server (or rebuild for production).
  *
  * Changed this script later? Deploy → Manage deployments → Edit (pencil) → Version: New version

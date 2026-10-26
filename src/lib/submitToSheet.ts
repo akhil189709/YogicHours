@@ -6,7 +6,7 @@ export type SubmitResult =
   | { ok: false; message?: string };
 
 // Referenced literally so Next.js can inline it into the browser bundle at build time.
-const SHEET_URL = process.env.NEXT_GOOGLE_SHEETS_URL;
+const SHEET_URL = process.env.NEXT_PUBLIC_GOOGLE_SHEETS_URL;
 
 const REQUEST_TIMEOUT_MS = 20000;
 
@@ -20,7 +20,7 @@ export const submitToSheet = async (
 ): Promise<SubmitResult> => {
   if (!SHEET_URL) {
     console.error(
-      `NEXT_GOOGLE_SHEETS_URL is not set — the ${kind} form cannot save. Deploy ` +
+      `NEXT_PUBLIC_GOOGLE_SHEETS_URL is not set — the ${kind} form cannot save. Deploy ` +
         'google-apps-script/Code.gs as a Web app, paste its /exec URL into .env.local, then restart.'
     );
     return { ok: false };
